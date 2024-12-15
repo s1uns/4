@@ -6,8 +6,6 @@ const SOCKET_ACTION = "SOCKET_ACTION";
 const url = process.env.REACT_APP_BACKEND_URL;
 const socket = io.connect(url);
 
-console.log("ENVIRONMENT URL: ", url);
-
 function App() {
 	const [user, setUser] = useState({ id: null, name: "" });
 	const [message, setMessage] = useState("");
@@ -67,7 +65,7 @@ function App() {
 		const handleShareKeyIteration = async (data) => {
 			setIsSharing(true);
 
-			const { publicKey, startIndex, iteration, isFinal, id } = data;
+			const { publicKey, startIndex, iteration, isFinal } = data;
 
 			const sharedKey =
 				BigInt(publicKey) ** BigInt(privateKey) % BigInt(p);

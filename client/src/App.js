@@ -6,6 +6,8 @@ const SOCKET_ACTION = "SOCKET_ACTION";
 const url = process.env.REACT_APP_BACKEND_URL;
 const socket = io.connect(url);
 
+console.log("ENVIRONMENT URL: ", url);
+
 function App() {
 	const [user, setUser] = useState({ id: null, name: "" });
 	const [message, setMessage] = useState("");
